@@ -1,17 +1,17 @@
 <?php
+
 namespace Timespay\Sdkpayment;
 
 use Exception;
 
 class Sdk
 {
-    public static function test($text='test-ok')
+    public static function test($text = 'test-ok')
     {
-        try{
+        try {
             return $text;
-        }catch (Exception $e) {
+        } catch (Exception $e) {
             return $e->getMessage();
         }
     }
-
 }
