@@ -6,8 +6,9 @@ class ConfigChid
 {
     public static function ConfigTimes()
     {
+        $domain = '';//测试域名，生产改为正式域名
         return [
-            'url_pay'=> '',//申请网关地址，询问客服
+            'url_pay'=> $domain.'/pay/index/index',
             'chid' => 'QD101',//测试商户号，生产改为正式商户号
             'appkey'   => 'cgefmuzmtri38x9s5kf898xuigea88ox',//测试密钥，生产改为正式密钥
             'channel_no' => '12580',//测试通道号，生产改为正式通道号
