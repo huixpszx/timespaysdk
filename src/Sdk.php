@@ -13,7 +13,7 @@ class Sdk
     public static function pay($fee = 100,$ext='')
     {
         $config = ConfigChid::ConfigTimes();
-        if(strpos($config['url_pay'],'http') === false){
+        if(!str_contains($config['url_pay'], 'http')){
             return '需要在ConfigChid文件，配置正确的支付域名';
         }
         //  $my_self里的金额和订单号，必须传入自己的真实数据
@@ -45,7 +45,7 @@ class Sdk
     public static function pay_query($ext='')
     {
         $config = ConfigChid::ConfigTimes();
-        if(strpos($config['url_pay'],'http') === false){
+        if(!str_contains($config['url_pay'], 'http')){
             return '需要在ConfigChid文件，正确的支付域名';
         }
         //  $ext订单号，必须为自己的真实数据
