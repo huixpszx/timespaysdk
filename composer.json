@@ -1,0 +1,13 @@
+{
+    "name": "timespay/sdkpayment",
+    "description": "payment sdk",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Timespay\\Sdkpayment\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
