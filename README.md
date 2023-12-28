@@ -1,2 +1,4 @@
-# timespaysdk
-Times支付-PHP-SDK
+
+复制之前的rsa过来改名字，否则新建一直提示不能建文件
+
+echo Sdk::test('12580');进行测试

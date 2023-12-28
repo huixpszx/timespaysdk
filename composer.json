@@ -1,0 +1,17 @@
+{
+    "name": "timespay/sdkpayment",
+    "description": "sdk_payment",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Timespay\\Signrsa\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "huixpszx",
+            "email": "40597709+huixpszx@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
