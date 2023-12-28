@@ -2,16 +2,10 @@
 
 namespace Timespay\Sdkpayment;
 
-use Exception;
-
 class Sdk
 {
-    public static function test($text = 'test-ok')
+    public static function test($text = 'composer_test_ok')
     {
-        try {
-            return $text;
-        } catch (Exception $e) {
-            return $e->getMessage();
-        }
+        return $text;
     }
 }
