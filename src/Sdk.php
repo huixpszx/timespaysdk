@@ -35,8 +35,7 @@ class Sdk
 
         $pubMethod['sign'] = Method::Sign($pubMethod, $my_self,$config);
         $paramArr = $pubMethod +  $my_self;
-        $res = Method::Send_post_form($config['url_pay'],$paramArr);
-        return json_decode($res,true);
+        return Method::Send_post_form($config['url_pay'],$paramArr);
     }
 
     public static function pay_query($ext='')
@@ -47,7 +46,6 @@ class Sdk
         }
         $config = ConfigChid::ConfigTimes();
         $sent = $config['url_pay'].'?method=1'.'&chid='.$config['chid'].'&ext='.$ext;
-        $res = Method::httpGet($sent);
-        return json_decode($res,true);
+        return Method::httpGet($sent);
     }
 }
