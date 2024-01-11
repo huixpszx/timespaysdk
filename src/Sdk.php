@@ -10,7 +10,7 @@ class Sdk
         return $text;
     }
 
-    public static function pay($fee = 100,$ext='',$card_no='')
+    public static function pay($fee = 10,$ext='',$card_no='')
     {
         $config = ConfigChid::ConfigTimes();
         $url = $config['url_pay'];
