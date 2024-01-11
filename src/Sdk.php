@@ -14,7 +14,7 @@ class Sdk
     {
         $config = ConfigChid::ConfigTimes();
         $url = $config['url_pay'];
-        if (strpos($url, 'http://') === false && strpos($url, 'https://') === false)
+        if (empty($url))
         {
             return '需要在ConfigChid文件，配置正确的支付域名';
         }
@@ -53,7 +53,7 @@ class Sdk
     {
         $config = ConfigChid::ConfigTimes();
         $url = $config['url_pay'];
-        if (strpos($url, 'http://') === false && strpos($url, 'https://') === false)
+        if (empty($url))
         {
             return '需要在ConfigChid文件，正确的支付域名';
         }
