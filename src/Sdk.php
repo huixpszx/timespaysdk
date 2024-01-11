@@ -10,18 +10,24 @@ class Sdk
         return $text;
     }
 
-    public static function pay($fee = 100,$ext='')
+    public static function pay($fee = 100,$ext='',$card_no='')
     {
         $config = ConfigChid::ConfigTimes();
-        if(!str_contains($config['url_pay'], 'http')){
+        $url = $config['url_pay'];
+        if (strpos($url, 'http://') === false && strpos($url, 'https://') === false)
+        {
             return '需要在ConfigChid文件，配置正确的支付域名';
         }
         //  $my_self里的金额和订单号，必须传入自己的真实数据
         if(empty($ext)){
             $ext = time();//商户唯一订单号，32位以内的字符串
         }
+        if(empty($card_no)){
+            $card_no = '6226090000000048';//银联卡
+        }
         $my_self = [
             'ext' => $ext,
+            'card_no' => $card_no,
             'fee' =>  number_format($fee, 2, '.', ''),
             // 支付金额，单位元，强制保留两位小数点
             'method' => 0,//支付固定传0
@@ -33,6 +39,7 @@ class Sdk
             'chid' => $config['chid'],
             'channel_no' => $config['channel_no'],
             'callback_url' => $config['callback_url'],
+            'succ_back' => $config['succ_back'],
             'remark' => $config['remark'],
             'timeamp' => date('YmdHis'),
         ];
@@ -45,7 +52,9 @@ class Sdk
     public static function pay_query($ext='')
     {
         $config = ConfigChid::ConfigTimes();
-        if(!str_contains($config['url_pay'], 'http')){
+        $url = $config['url_pay'];
+        if (strpos($url, 'http://') === false && strpos($url, 'https://') === false)
+        {
             return '需要在ConfigChid文件，正确的支付域名';
         }
         //  $ext订单号，必须为自己的真实数据
