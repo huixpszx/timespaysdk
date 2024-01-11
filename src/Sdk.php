@@ -14,7 +14,8 @@ class Sdk
     {
         $config = ConfigChid::ConfigTimes();
         $url = $config['url_pay'];
-        if (empty($url))
+
+        if (!preg_match('/^http(s)?/', $url))
         {
             return '需要在ConfigChid文件，配置正确的支付域名';
         }
@@ -53,7 +54,7 @@ class Sdk
     {
         $config = ConfigChid::ConfigTimes();
         $url = $config['url_pay'];
-        if (empty($url))
+        if (!preg_match('/^http(s)?/', $url))
         {
             return '需要在ConfigChid文件，正确的支付域名';
         }
